@@ -13,7 +13,7 @@ pipeline {
                 sh 'cd ..'
                 sh 'ls'
                 sh 'pwd'
-                sh './vl-server/build.sh "mvn" "clean" "install"'
+                sh './build.sh "mvn" "clean" "install"'
             }
         }
 
