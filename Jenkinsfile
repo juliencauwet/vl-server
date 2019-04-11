@@ -10,11 +10,12 @@ pipeline {
 
         stage('build'){
             steps {
-                sh 'cd ..'
-                sh 'ls'
-                sh 'mvn clean install'
-                sh './build.sh "mvn" "clean" "install"'
+                dir("vl-server"){
+                    sh 'ls'
+                    sh './build.sh "mvn" "clean" "install"'
+                }
             }
+
         }
 
         stage('deploy'){
