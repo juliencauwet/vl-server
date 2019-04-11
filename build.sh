@@ -6,16 +6,12 @@ echo "************************************************************************"
 
 pwd
 ls
-cat pom.xml
-
-cd ..
 
 pwd
 
 docker  run --rm \
         -v /var/run/docker.sock:/var/run/docker.sock \
-        -v $PWD/pom.xml:/config-server/pom.xml \
-        -v $PWD/src:/config-server/src \
+        -v $PWD:/config-server \
         -v ~/.m2/repository:/root/.m2/ \
         -w /config-server \
         maven:3-alpine "$@"
