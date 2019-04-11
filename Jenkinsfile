@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+            maven 'Apache Maven 3.5.2'
+        }
     stages {
 
         stage('checkout') {
@@ -10,6 +13,7 @@ pipeline {
 
         stage('build'){
             steps {
+                sh 'mvn clean install'
                 dir("vl-server"){
                     sh 'ls'
                     sh './build.sh "mvn" "clean" "install"'
