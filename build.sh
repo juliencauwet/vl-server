@@ -6,6 +6,7 @@ echo "************************************************************************"
 
 pwd
 ls
+cat pom.xml
 
 docker  run --rm \
         -v /var/run/docker.sock:/var/run/docker.sock \
