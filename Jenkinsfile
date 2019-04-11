@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh 'cd ..'
                 sh 'ls'
-                sh 'pwd'
+                sh 'mvn clean install'
                 sh './build.sh "mvn" "clean" "install"'
             }
         }
