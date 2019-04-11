@@ -4,7 +4,6 @@ echo "************************************************************************"
 echo "**************************** Building phase ****************************"
 echo "************************************************************************"
 
-cd ..
 pwd
 ls
 
@@ -12,5 +11,4 @@ docker  run --rm \
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v $PWD/config-server:/config-server \
         -v ~/.m2/repository:/root/.m2/ \
-        -w / \
         maven:3-alpine "$@"
