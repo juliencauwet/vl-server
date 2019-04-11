@@ -10,7 +10,7 @@ pipeline {
 
         stage('build'){
             steps {
-                sh './build.sh'
+                sh './build.sh "mvn" "-X" "clean" "install"'
             }
         }
 
