@@ -9,8 +9,6 @@ pwd
 echo "ls:"
 ls
 
-cd ..
-
 docker  run \
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v $PWD/:/vl-server \
