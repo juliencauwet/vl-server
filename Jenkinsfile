@@ -28,6 +28,7 @@ pipeline {
         stage('deploy'){
             steps {
                 sh './deploy.sh'
+                sh' docker ps -a'
             }
         }
 
