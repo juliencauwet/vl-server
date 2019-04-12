@@ -16,8 +16,9 @@ pipeline {
                     sh '''
                         echo "PATH = ${PATH}"
                         echo "M2_HOME = ${M2_HOME}
+                        mvn clean install
                     '''
-                    sh 'mvn clean installl'
+                    //sh 'mvn clean install'
                     //sh './build.sh "mvn" "clean" "install"'
 
             }
