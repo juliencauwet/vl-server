@@ -15,7 +15,7 @@ pipeline {
             steps {
                     mvn clean installl
                     //sh './build.sh "mvn" "clean" "install"'
-                }
+
             }
 
         }
@@ -28,3 +28,4 @@ pipeline {
 
     }
 
+}
