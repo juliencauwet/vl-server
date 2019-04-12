@@ -16,7 +16,7 @@ pipeline {
                     sh '''
                         echo "PATH = ${PATH}"
                         echo "M2_HOME = ${M2_HOME}"
-                        mvn clean install
+                        mvn clean install -DskipTests
                     '''
                     //sh 'mvn clean install'
                     //sh './build.sh "mvn" "clean" "install"'
@@ -27,8 +27,11 @@ pipeline {
 
         stage('deploy'){
             steps {
-                sh './deploy.sh'
-                sh' docker ps -a'
+                sh '''
+                    docker-compose down
+                    docker-compose up
+                    docker ps -a
+                '''
             }
         }
 
