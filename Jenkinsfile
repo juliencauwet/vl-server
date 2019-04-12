@@ -28,6 +28,7 @@ pipeline {
         stage('deploy'){
             steps {
                 sh '''
+                    docker rm server
                     docker-compose down
                     docker-compose up
                     docker ps -a
