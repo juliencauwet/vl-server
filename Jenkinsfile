@@ -5,22 +5,15 @@ pipeline {
     }
     stages {
 
-        stage('checkout') {
+        stage('Checkout') {
             steps {
                 git 'https://github.com/juliencauwet/vl-server.git'
             }
         }
 
-        stage('build'){
+        stage('Build'){
             steps {
-                    sh '''
-                        echo "PATH = ${PATH}"
-                        echo "M2_HOME = ${M2_HOME}"
-                        mvn clean install -DskipTests
-                    '''
-                    //sh 'mvn clean install'
-                    //sh './build.sh "mvn" "clean" "install"'
-
+                    sh 'mvn clean install -DskipTests'
             }
 
         }
@@ -36,9 +29,9 @@ pipeline {
                             error 'The tests failed'
                         }
                     }
-                }
+        }
 
-        stage('deploy'){
+        stage('Deploy'){
             steps {
                 sh '''
                     docker rm server
