@@ -24,6 +24,19 @@ pipeline {
             }
 
         }
+        stage('Tests') {
+                    steps {
+                        sh 'mvn test'
+                    }
+                    post {
+                        always {
+                            junit 'target/surefire-reports/**/*.xml'
+                        }
+                        failure {
+                            error 'The tests failed'
+                        }
+                    }
+                }
 
         stage('deploy'){
             steps {
