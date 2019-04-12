@@ -13,7 +13,11 @@ pipeline {
 
         stage('build'){
             steps {
-                    mvn clean installl
+                    sh '''
+                        echo "PATH = ${PATH}"
+                        echo "M2_HOME = ${M2_HOME}
+                    '''
+                    sh 'mvn clean installl'
                     //sh './build.sh "mvn" "clean" "install"'
 
             }
