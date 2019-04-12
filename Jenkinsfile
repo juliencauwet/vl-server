@@ -34,7 +34,6 @@ pipeline {
         stage('Deploy'){
             steps {
                 sh '''
-                    docker rm server
                     docker-compose down
                     docker run -d --name server -p 8651:8650 jaycecordon/vlserver:0.0.1-SNAPSHOT
                     docker ps -a
