@@ -4,4 +4,4 @@ services:
     container_name: server
     image: jaycecordon/vlserver:0.0.1-SNAPSHOT
     ports:
-      - "8650:8650"
+      - "8651:8650"
